@@ -1,0 +1,14 @@
+:global(input[type='number']::-webkit-outer-spin-button),
+:global(input[type='number']::-webkit-inner-spin-button) {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+:global(input[type='number']) {
+  -moz-appearance: textfield;
+}
+
+/* padding только для file */
+:global(input[type='file']) {
+  padding: 5px;
+}

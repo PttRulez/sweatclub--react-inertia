@@ -4,13 +4,14 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import { UserInfoTab } from '@/layouts/app/shared/UserInfoTab';
 import { useMobileNavigation } from '@/hooks/use-mobile-navigation';
+import { UserInfoTab } from '@/layouts/app/shared/UserInfoTab';
 import { logout } from '@/routes';
 import { edit } from '@/routes/profile';
 import { type User } from '@/types';
 import { Link, router } from '@inertiajs/react';
-import { LogOut, Settings } from 'lucide-react';
+import { Squirrel, LogOut, Settings } from 'lucide-react';
+import { index } from '@/routes/adminka';
 
 interface UserMenuContentProps {
     user: User;
@@ -41,10 +42,25 @@ export function UserMenuContent({ user }: UserMenuContentProps) {
                         onClick={cleanup}
                     >
                         <Settings className="mr-2" />
-                        Настройкиs
+                        Настройки
                     </Link>
                 </DropdownMenuItem>
             </DropdownMenuGroup>
+            {user.is_admin && (
+                <DropdownMenuGroup>
+                    <DropdownMenuItem asChild>
+                        <Link
+                            className="block w-full"
+                            href={index()}
+                            prefetch
+                            onClick={cleanup}
+                        >
+                            <Squirrel className="mr-2" />
+                            Админка
+                        </Link>
+                    </DropdownMenuItem>
+                </DropdownMenuGroup>
+            )}
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
                 <Link
