@@ -16,7 +16,7 @@ function Register() {
             <Form
                 {...store.form()}
                 resetOnSuccess={['password', 'password_confirmation']}
-                disableWhileProcessing
+
                 className="flex flex-col gap-6"
             >
                 {({ processing, errors }) => (

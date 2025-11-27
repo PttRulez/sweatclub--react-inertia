@@ -40,13 +40,13 @@ export default function FlashToaster() {
         }
 
         // Валидационные ошибки (withErrors / 422)
-        if (props.errors) {
-            Object.values(props.errors).forEach((message) => {
-                if (message) {
-                    toast.error(String(message));
-                }
-            });
-        }
+        // if (props.errors) {
+        //     Object.values(props.errors).forEach((message) => {
+        //         if (message) {
+        //             toast.error(String(message));
+        //         }
+        //     });
+        // }
     }, [props.flash, props.errors]);
 
     return <Toaster richColors position="top-center" />;

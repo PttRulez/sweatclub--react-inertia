@@ -40,8 +40,17 @@ export interface SharedData {
 }
 
 export interface User {
+    id: number;
     avatar?: string;
     is_admin: boolean;
     name: string;
     email: string;
+}
+
+export interface BoardGame {
+    id: number;
+    name: string;
+    has_points: boolean;
+    image_path: string;
+    thumbnail: string;
 }

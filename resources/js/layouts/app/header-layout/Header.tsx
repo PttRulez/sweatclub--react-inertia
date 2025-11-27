@@ -4,7 +4,7 @@ import { MobileMenu } from '@/layouts/app/header-layout/components/MobileMenu';
 import { home, login, register } from '@/routes';
 import { type BreadcrumbItem, type NavItem, type SharedData } from '@/types';
 import { usePage } from '@inertiajs/react';
-import { LayoutGrid, LogIn, UserRoundPlus } from 'lucide-react';
+import { LogIn, UserRoundPlus } from 'lucide-react';
 
 interface AppHeaderProps {
     breadcrumbs?: BreadcrumbItem[];

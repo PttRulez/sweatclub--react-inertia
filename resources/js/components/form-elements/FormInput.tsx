@@ -13,40 +13,46 @@ type Props = {
     placeholder?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-const FormInput = forwardRef<HTMLInputElement, Props>(({
-    additionToLabel,
-    className,
-    errorMessage,
-    fieldName,
-    label,
-    placeholder,
-    type = 'text',
-    autoComplete='off',
-    ...restProps
-}: Props) => (
-    <div className="grid gap-2">
-        {label && (
-            <div className="flex items-center justify-between">
-                <Label htmlFor={fieldName} className="text-lg">
-                    {label}
-                </Label>
+const FormInput = forwardRef<HTMLInputElement, Props>(
+    (
+        {
+            additionToLabel,
+            className,
+            errorMessage,
+            fieldName,
+            label,
+            placeholder,
+            type = 'text',
+            autoComplete = 'off',
+            ...restProps
+        },
+        ref,
+    ) => (
+        <div className="grid gap-2">
+            {label && (
+                <div className="flex items-center justify-between">
+                    <Label htmlFor={fieldName} className="text-lg">
+                        {label}
+                    </Label>
 
-                {additionToLabel}
-            </div>
-        )}
+                    {additionToLabel}
+                </div>
+            )}
 
-        <Input
-            id={fieldName}
-            name={fieldName}
-            type={type}
-            className={className}
-            placeholder={placeholder}
-            autoComplete={autoComplete}
-            {...restProps}
-        />
+            <Input
+                id={fieldName}
+                name={fieldName}
+                type={type}
+                className={className}
+                placeholder={placeholder}
+                autoComplete={autoComplete}
+                ref={ref}
+                {...restProps}
+            />
 
-        <InputError message={errorMessage} className="mt-2" />
-    </div>
-));
+            <InputError message={errorMessage} className="mt-2" />
+        </div>
+    ),
+);
 
 export default FormInput;

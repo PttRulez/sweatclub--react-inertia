@@ -12,6 +12,9 @@ export function UserInfoTab({
 }) {
     const getInitials = useInitials();
 
+    if(!user) return;
+
+
     return (
         <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
             <Avatar className="h-8 w-8 overflow-hidden rounded-full">

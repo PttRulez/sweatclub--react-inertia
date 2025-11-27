@@ -53,28 +53,6 @@ export default function Profile({
                                 errorMessage={errors.email}
                             />
 
-                            {mustVerifyEmail &&
-                                auth.user.email_verified_at === null && (
-                                    <div>
-                                        <p className="-mt-4 text-sm text-muted-foreground">
-                                            Ваш email не подтвержден.{' '}
-                                            <Link
-                                                href={send()}
-                                                as="button"
-                                                className="text-foreground underline decoration-neutral-300 underline-offset-4 transition-colors duration-300 ease-out hover:decoration-current! dark:decoration-neutral-500"
-                                            >
-                                                Нажмите, что заново получить email для подтверждения
-                                            </Link>
-                                        </p>
-
-                                        {status ===
-                                            'verification-link-sent' && (
-                                            <div className="mt-2 text-sm font-medium text-green-600">
-                                                Новая ссылка для подтверждения email отправлена вам на почту
-                                            </div>
-                                        )}
-                                    </div>
-                                )}
 
                             <div className="flex items-center gap-4">
                                 <Button

@@ -34,6 +34,7 @@ export default function DesktopMenu({
         'text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100';
     const page = usePage<SharedData>();
     const { auth } = page.props;
+
     return (
         <>
             <Link
