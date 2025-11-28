@@ -10,12 +10,17 @@ import { cn } from '@/lib/utils';
 import React from 'react';
 import InputError from '@/components/form-elements/InputError';
 
+export type SelectOption = {
+    value: string;
+    label: string;
+};
+
 type FormSelectProps = {
     className?: string;
     errorMessage?: string;
     label?: string;
     onChange: (value: any) => void;
-    options: string[];
+    options: SelectOption[];
     placeholder?: string;
     additionToLabel?: React.ReactNode;
 } & React.ComponentPropsWithoutRef<typeof Select>;
@@ -31,7 +36,7 @@ export default function FormSelect({
     ...selectProps
 }: FormSelectProps) {
     return (
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col items-start gap-2">
             {label && (
                 <div className="flex items-center justify-between">
                     <Label className="text-lg">
@@ -43,14 +48,14 @@ export default function FormSelect({
 
             <Select  {...selectProps} onValueChange={onChange}>
                 <SelectTrigger
-                    className={cn('w-full p-6 text-xl', className)}
+                    className={cn('w-full p-6 text-xl [&_[data-slot=select-value]]:text-lg', className)}
                 >
                     <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
                 <SelectContent>
                     {options.map((option) => (
-                        <SelectItem key={option} value={option}>
-                            {option}
+                        <SelectItem key={option.value} value={option.value}>
+                            {option.label}
                         </SelectItem>
                     ))}
                 </SelectContent>

@@ -54,3 +54,17 @@ export interface BoardGame {
     image_path: string;
     thumbnail: string;
 }
+
+export interface Game {
+    id: number;
+    boardgame_id: number;
+    date_played: string;
+    photo_path: string;
+    players: { result:Player }[];
+}
+
+export interface Player {
+    id: number;
+    points?: number;
+    winner: boolean;
+}

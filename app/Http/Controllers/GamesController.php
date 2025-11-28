@@ -11,7 +11,7 @@ class GamesController extends Controller
     public function index(): Response
     {
         return inertia('Home', [
-            'games' => Game::all(),
+            'games' => Game::with('users')->get(),
         ]);
     }
 }

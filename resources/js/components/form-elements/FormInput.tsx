@@ -3,6 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import React, { forwardRef, ReactNode } from 'react';
 import './css/input-style.css';
+import { cn } from '@/lib/utils';
 
 type Props = {
     additionToLabel?: ReactNode;
@@ -43,7 +44,7 @@ const FormInput = forwardRef<HTMLInputElement, Props>(
                 id={fieldName}
                 name={fieldName}
                 type={type}
-                className={className}
+                className={cn('[&[type=file]]:cursor-pointer', className)}
                 placeholder={placeholder}
                 autoComplete={autoComplete}
                 ref={ref}
