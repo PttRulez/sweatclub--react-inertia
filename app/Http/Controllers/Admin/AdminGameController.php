@@ -27,6 +27,13 @@ class AdminGameController extends Controller
         ]);
     }
     
+    public function index(): Response
+    {
+        return inertia('adminka/games/Index', [
+            'games' => Game::all()
+        ]);
+    }
+    
     public function store(Request $request, ImageService $imgService)
     {
         $validated = $request->validate([

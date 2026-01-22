@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'is_admin' => $this->isAdmin(),
+            'avatar_path' => $this->avatar_path
         ];
     }
 }

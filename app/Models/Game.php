@@ -16,6 +16,10 @@ class Game extends Model
     protected $appends = [
         'players',
     ];
+
+    protected $with = [
+        'boardgame',
+    ];
     
     public function users()
     {
@@ -24,18 +28,25 @@ class Game extends Model
     
     public function boardgame()
     {
-        return $this->belongsTo(Boardgame::class);
+        return $this->belongsTo(Boardgame::class)->select(['id', 'name', 'thumbnail']);
     }
     
     protected function players(): Attribute
     {
         return Attribute::make(
-            get: fn() => $this->users->map(fn($user) => [
-                'id' => $user->id,
-                'name' => $user->name,
-                'winner' => (bool)$user->result->winner,
-                'points' => $user->result->points,
-            ])
+            get: fn() => $this->users
+                ->sortBy([
+                    ['result.winner', 'desc'],
+                    ['result.points', 'desc'],
+                ])
+                ->map(fn($user) => [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'winner' => (bool)$user->result->winner,
+                    'points' => $user->result->points,
+                    'avatar_path' => $user->avatar_path,
+                ])
+                ->values()
         );
     }
 }

@@ -36,7 +36,7 @@ export default function DesktopMenu({
     const { auth } = page.props;
 
     return (
-        <>
+        <div className="flex w-full items-center">
             <Link
                 href={home()}
                 prefetch
@@ -44,6 +44,7 @@ export default function DesktopMenu({
             >
                 <AppLogo />
             </Link>
+
             <div className="ml-6 hidden h-full items-center space-x-6 lg:flex">
                 <NavigationMenu className="flex h-full items-stretch">
                     <NavigationMenuList className="flex h-full items-stretch space-x-2">
@@ -120,6 +121,6 @@ export default function DesktopMenu({
                     </div>
                 )}
             </div>
-        </>
+        </div>
     );
 }

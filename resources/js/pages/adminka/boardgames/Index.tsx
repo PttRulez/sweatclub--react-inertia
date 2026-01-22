@@ -4,6 +4,7 @@ import { BoardGame } from '@/types';
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 
 export default function Index({ boardgames }: { boardgames: BoardGame[]}) {
+    console.log(boardgames);
 
     return (
         <>

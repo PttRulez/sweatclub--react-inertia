@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Boardgame extends Model
 {
-     protected $fillable = ['name', 'has_points', 'image_path'];
+     protected $guarded = [];
 
     public function games()
     {

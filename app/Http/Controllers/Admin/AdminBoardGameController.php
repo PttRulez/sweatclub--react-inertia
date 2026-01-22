@@ -38,14 +38,15 @@ class AdminBoardGameController extends Controller
             ]
         );
         
-        $imgPath = $imgService->saveWebp(file: $validated['image'], dir: 'img/boardgames/');
+        $images = $imgService->saveWithThumbnail(file: $validated['image'], dir: 'img/boardgames/');
         
         Boardgame::create([
             'name' => $validated['name'],
             'has_points' => json_decode($request->has_points),
-            'image_path' => $imgPath,
+            'image_path' => $images['image_path'],
+            'thumbnail' => $images['thumbnail'],
         ]);
-        
+
         return to_route('adminka.boardgames.index')->with('success', 'Игра успешно создана');
     }
 }

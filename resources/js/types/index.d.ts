@@ -41,7 +41,7 @@ export interface SharedData {
 
 export interface User {
     id: number;
-    avatar?: string;
+    avatar_path?: string;
     is_admin: boolean;
     name: string;
     email: string;
@@ -60,11 +60,14 @@ export interface Game {
     boardgame_id: number;
     date_played: string;
     photo_path: string;
-    players: { result:Player }[];
+    players: Player[];
+    boardgame: BoardGame;
 }
 
 export interface Player {
+    avatar_path: string;
     id: number;
+    name: string;
     points?: number;
     winner: boolean;
 }
