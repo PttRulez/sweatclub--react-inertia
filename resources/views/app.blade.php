@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="theme-nord">
 <head>
   <meta charset="utf-8">
-э  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   {{-- Inline script to detect system dark mode preference and apply it immediately --}}
   <script>
