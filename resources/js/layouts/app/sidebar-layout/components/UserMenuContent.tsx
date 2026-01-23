@@ -47,19 +47,7 @@ export function UserMenuContent({ user }: UserMenuContentProps) {
                         </Link>
                     </SheetClose>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                    <SheetClose asChild>
-                        <Link
-                            className="block w-full"
-                            href={edit()}
-                            prefetch
-                            onClick={cleanup}
-                        >
-                            <Settings className="mr-2" />
-                            ыфвф
-                        </Link>
-                    </SheetClose>
-                </DropdownMenuItem>
+
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>

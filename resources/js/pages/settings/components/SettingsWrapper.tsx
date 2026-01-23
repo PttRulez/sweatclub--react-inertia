@@ -13,16 +13,19 @@ const sidebarNavItems: NavItem[] = [
         title: 'Профиль',
         href: edit(),
         icon: null,
+        show: true
     },
     {
         title: 'Пароль',
         href: editPassword(),
         icon: null,
+        show: true
     },
     {
         title: 'Стилёк',
         href: editAppearance(),
         icon: null,
+        show: true
     },
 ];
 
@@ -36,14 +39,6 @@ export default function SettingsWrapper({ children }: PropsWithChildren) {
 
     return (
         <div className="px-4 py-6">
-            <div className="mb-8 space-y-0.5">
-                <h2 className="text-xl font-semibold tracking-tight">
-                    Настройки
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                    Управляйте вашим аккаунтом здесь
-                </p>
-            </div>
             <div className="flex flex-col lg:flex-row lg:space-x-12">
                 <aside className="w-full max-w-xl lg:w-48">
                     <nav className="flex flex-col space-y-1 space-x-0">
