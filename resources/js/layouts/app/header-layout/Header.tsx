@@ -39,7 +39,7 @@ export function Header({ breadcrumbs = [] }: AppHeaderProps) {
 
     return (
         <>
-            <div className="fixed w-full border-b border-sidebar-border/80">
+            <div className="fixed w-full border-b border-sidebar-border/80 z-10 bg-background">
                 <div className="mx-auto flex h-16 items-center px-4 md:max-w-7xl">
                     <MobileMenu
                         mainNavItems={mainNavItems}
