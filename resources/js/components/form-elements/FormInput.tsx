@@ -44,7 +44,7 @@ const FormInput = forwardRef<HTMLInputElement, Props>(
                 id={fieldName}
                 name={fieldName}
                 type={type}
-                className={cn('[&[type=file]]:cursor-pointer', className)}
+                className={cn('[&[type=file]]:cursor-pointer max-md:text-[16px]', className)}
                 placeholder={placeholder}
                 autoComplete={autoComplete}
                 ref={ref}
